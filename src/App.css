@@ -16,3 +16,12 @@
 .App-intro {
   font-size: large;
 }
+
+body {
+  /*for background image*/
+  background-image: url("logo1.png");
+  background-size: cover;
+  background-attachment: fixed;
+  /*for text*/
+  color:white;
+}
