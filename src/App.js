@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header.js'
+import SearchResult from './components/SearchResult.js'
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {result:[]}
+    this.updateResult = this.updateResult.bind(this);
+  }
+
+  updateResult(newResult){
+    this.setState({result: newResult})
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Penns IMDB clone</h1>
-        </header>
-        <p className="App-intro">
-          Introduction Text
-        </p>
+        <Header onUpdate={this.updateResult}/>
+        <SearchResult data={this.state.result} />
       </div>
     );
   }
